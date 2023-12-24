@@ -10,23 +10,26 @@ type IconProps = PropsWithChildren<{
 const Icons = ({name}: IconProps) => {
   switch (name) {
     case 'circle':
-        return <Icon name='circle-thin' color="#F7CD2E" />
+        return <View style={styles.icon}><Icon size={40} name='circle-thin' color="#F7CD2E" /></View>
         break;
         
     case 'cross':
-      return <Icon name='times' color="#38CC77" />
-      break;
-      
-        
-    case 'pencil':
-      return <Icon name='pencil' color="#D3D3D3" />
+      return <View style={styles.icon}><Icon size={40} name='times' color="#38CC77" /></View>
       break;
   
     default:
-        break;
+      return <View style={styles.icon}><Icon size={20} name='pencil' color="#D3D3D3" /></View>
+      break;
   }
 }
 
 export default Icons
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  icon:{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 100
+  }
+})
